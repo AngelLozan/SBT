@@ -14,10 +14,12 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 //@dev Burnable token, so you can get rid of it even if you can't transfer it out. 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
-contract SoulBound is ERC721Burnable, Ownable {
+contract SoulBound is ERC721Burnable, Ownable, ReentrancyGuard {
 	
+//@notice Error is thrown when trying to transfer a soulbound nft
+error SoulBound();
 
-	struct claimNFT {
+struct claimNFT {
 		string _uri;
 		address to;
 		bool claimed;
@@ -39,13 +41,75 @@ event claimBoundSoul(bytes32 claimID, uint256 tokenId);
 
 constructor() public payable ERC721("ExodusSBT", "ESBT"){ }
 
-
-
-
+//@dev Corresponds with the bindSoul event
+function bindASoul(address _to, string memory _uri) public payable {
 
 }
 
-//Ending contract
+/// --- Disabling Transfer Of Soulbound NFT --- ///
+
+  // @notice Function disabled as cannot transfer a soulbound nft
+  function safeTransferFrom(
+    address, 
+    address, 
+    uint256,
+    bytes memory
+  ) public pure override {
+    revert SoulBound();
+  }
+
+  // @notice Function disabled as cannot transfer a soulbound nft
+  function safeTransferFrom(
+    address, 
+    address, 
+    uint256 
+  ) public pure override {
+    revert SoulBound();
+  }
+
+  // @notice Function disabled as cannot transfer a soulbound nft
+  function transferFrom(
+    address, 
+    address, 
+    uint256
+  ) public pure override {
+    revert SoulBound();
+  }
+
+  // @notice Function disabled as cannot transfer a soulbound nft
+  function approve(
+    address, 
+    uint256
+  ) public pure override {
+    revert SoulBound();
+  }
+
+  // @notice Function disabled as cannot transfer a soulbound nft
+  function setApprovalForAll(
+    address, 
+    bool
+  ) public pure override {
+    revert SoulBound();
+  }
+
+  // @notice Function disabled as cannot transfer a soulbound nft
+  function getApproved(
+    uint256
+  ) public pure override returns (address) {
+    revert SoulBound();
+  }
+
+  // @notice Function disabled as cannot transfer a soulbound nft
+  function isApprovedForAll(
+    address, 
+    address
+  ) public pure override returns (bool) {
+    revert SoulBound();
+  }
+
+//@notice Ending contract
+}
+
 
 
 
