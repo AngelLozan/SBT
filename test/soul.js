@@ -15,7 +15,7 @@ it("Should initialize the name and symbol correctly", async () => {
   const nft = await NFT.deploy("0xcd234a471b72ba2f1ccf0a70fcaba648a5eecd8d")
   const name = await nft.name();
   const symbol = await nft.symbol();
-  expect(await nft.name()).to.equal("ExodusSoulBoundNFT")
+  expect(await nft.name()).to.equal("ExodusSBT")
   expect(await nft.symbol()).to.equal("ESBT")
   console.log("name:" , name)
   console.log("symbol:", symbol)
