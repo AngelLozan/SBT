@@ -1,8 +1,3 @@
-const {
-  time,
-  loadFixture,
-} = require("@nomicfoundation/hardhat-network-helpers");
-const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 // const { SignerWithAddress } = require("@nomiclabs/hardhat-ethers/signers");
@@ -10,17 +5,39 @@ const { ethers } = require("hardhat");
 /* Tests for NFT contract */
 describe("Soul Bound Token Contract", () => {
 it("Should initialize the name and symbol correctly", async () => {
-  const NFT = await ethers.getContractFactory("NFT")
+  const [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
+  const NFT = await ethers.getContractFactory("NFT");
   //Random contract address inserted here to satisfy constructor arguments
-  const nft = await NFT.deploy("0xcd234a471b72ba2f1ccf0a70fcaba648a5eecd8d")
+  const nft = await NFT.deploy("0xcd234a471b72ba2f1ccf0a70fcaba648a5eecd8d");
   const name = await nft.name();
   const symbol = await nft.symbol();
-  expect(await nft.name()).to.equal("ExodusSBT")
-  expect(await nft.symbol()).to.equal("ESBT")
-  console.log("name:" , name)
-  console.log("symbol:", symbol)
+  expect(await nft.name()).to.equal("ExodusSBT");
+  expect(await nft.symbol()).to.equal("ESBT");
+  console.log("name:" , name);
+  console.log("symbol:", symbol);
  })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 describe("ESBT NFT contract minting", () => {

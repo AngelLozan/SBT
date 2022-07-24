@@ -19,7 +19,7 @@ contract SoulBound is ERC721Burnable, Ownable, ReentrancyGuard {
 address owner;
 
 //@notice Error is thrown when trying to transfer a soulbound nft using other methods.
-error SoulBound();
+error soul_bound();
 
 struct claimNFT {
 		string uri;
@@ -129,7 +129,7 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
     uint256,
     bytes memory
   ) public pure override {
-    revert SoulBound();
+    revert soul_bound();
   }
 
   // @notice Function disabled as cannot transfer a soulbound nft
@@ -138,7 +138,7 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
     address, 
     uint256 
   ) public pure override {
-    revert SoulBound();
+    revert soul_bound();
   }
 
   // @notice Function disabled as cannot transfer a soulbound nft
@@ -147,7 +147,7 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
     address, 
     uint256
   ) public pure override {
-    revert SoulBound();
+    revert soul_bound();
   }
 
   // @notice Function disabled as cannot transfer a soulbound nft
@@ -155,7 +155,7 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
     address, 
     uint256
   ) public pure override {
-    revert SoulBound();
+    revert soul_bound();
   }
 
   // @notice Function disabled as cannot transfer a soulbound nft
@@ -163,14 +163,14 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
     address, 
     bool
   ) public pure override {
-    revert SoulBound();
+    revert soul_bound();
   }
 
   // @notice Function disabled as cannot transfer a soulbound nft
   function getApproved(
     uint256
   ) public pure override returns (address) {
-    revert SoulBound();
+    revert soul_bound();
   }
 
   // @notice Function disabled as cannot transfer a soulbound nft
@@ -178,7 +178,7 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
     address, 
     address
   ) public pure override returns (bool) {
-    revert SoulBound();
+    revert soul_bound();
   }
 
 //@notice Ending contract
