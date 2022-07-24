@@ -16,6 +16,10 @@ module.exports = {
     //   url: API_URL,
     //   accounts: [`0x${PRIVATE_KEY}`]
     // },
+    mumbai: {
+      url: "https://polygon-mumbai.infura.io/v3/3d67dbef6f8b488780529a324416cb0d",
+      accounts: [`0x${privateKey}`]
+    },
     matic: {
       url: API_URL,
       accounts: [`0x${PRIVATE_KEY}`]
