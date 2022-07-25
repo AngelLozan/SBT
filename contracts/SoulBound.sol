@@ -44,10 +44,16 @@ constructor() public payable ERC721("ExampleSBT", "ESBT"){ }
 
 owner = msg.sender;
 
+modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
+
 //@dev Corresponds with the boundSoul event.
 //@dev This creates a soul bound claimID which is then used to make the non-transferrable NFT. Stored in struct to be accessed later. Uses msg.sender to ensure no-one else can claim that NFT. 
 
-function bindASoul(address _to, string memory _uri) public payable returns (bytes32 claimID) {
+function bindASoul(address _to, string memory _uri) onlyOwner external payable returns (bytes32 claimID) {
 	require (_to != address(0), "Can't create nft for the burn address");
 	require (bytes(_uri).length > 0, "Can't create nft for an empty URI");
 
