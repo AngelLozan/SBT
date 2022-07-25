@@ -18,7 +18,7 @@ module.exports = {
     // },
     mumbai: {
       url: "https://polygon-mumbai.infura.io/v3/3d67dbef6f8b488780529a324416cb0d",
-      accounts: [`0x${privateKey}`]
+      accounts: [`0x${PRIVATE_KEY}`]
     },
     matic: {
       url: API_URL,
