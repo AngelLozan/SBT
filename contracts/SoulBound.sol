@@ -100,17 +100,13 @@ function burn(uint256 tokenId) public virtual override {
 }
 
   /**
-     * @dev Hook that is called before any token transfer. This includes minting
-     * and burning.
-     *
-     * Calling conditions:
-     *
-     * - When `from` and `to` are both non-zero, ``from``'s `tokenId` will be
-     * transferred to `to`.
-     * - When `from` is zero, `tokenId` will be minted for `to`.
-     * - When `to` is zero, ``from``'s `tokenId` will be burned.
-     * - `from` and `to` are never both zero.
-     */
+     * @dev Hook that is called before any token transfer. This includes minting and burning.
+     * When from and to are both non-zero, from tokenId will be
+     * transferred to "to".
+     * When from is zero, tokenId will be minted for "to".
+     * When to is zero, from tokenId will be burned.
+     * From and to are never both zero.
+   **/
 
 function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal virtual override {
 	//only allow mint and burn transfers
