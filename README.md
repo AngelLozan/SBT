@@ -5,7 +5,9 @@ Where to start: See `contracts` directory for the actual token. The rest is what
 
 This is a project to mint a Soul Bound NFT as an example for the purposes of exploring whether it is profitable to mint SBTs on Polygon and bridge them to Ethereum for users of the __________ wallet.
 
-Example metadata and functionality is limited. claim and burn. 
+Example metadata and functionality is limited. Claim and burn. 
+
+In this contract, the owner is the only one who can create claims, or the beginnings of an NFT that users can, by their addresses, then claim and mint with the contract. 
 
 Deploy:
 `npx hardhat node`

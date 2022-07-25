@@ -16,7 +16,11 @@ it("Should initialize the name and symbol correctly", async () => {
   console.log("name:" , name);
   console.log("symbol:", symbol);
  })
-})
+});
+
+it("Should return false for a new query of ")
+
+
 
 
 
