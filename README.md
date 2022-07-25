@@ -7,6 +7,11 @@ This is a project to mint a Soul Bound NFT as an example for the purposes of exp
 
 Example metadata and functionality is limited. claim and burn. 
 
+Deploy:
+`npx hardhat node`
+Seperate terminal: other commands below. 
+
+
 To Do:
 - Get images to mint and pin folder to Pinata
 - Assign metadata and each image and pin those to Pinata (also metadata folder)

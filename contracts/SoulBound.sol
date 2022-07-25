@@ -23,7 +23,6 @@ struct claimNFT {
 		string uri;
 		address to;
 		bool claimed;
-
 	}
 
 using Counters for Counters.Counter;

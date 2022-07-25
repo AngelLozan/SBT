@@ -10,7 +10,7 @@ const contract = require("../artifacts/contracts/SoulBound.sol/SoulBound.json");
 
 console.log(JSON.stringify(contract.abi));
 
-const contractAddress = "0x2562ffA357FbDd56024AeA7D8E2111ad299766c9";
+const contractAddress = "<deployed at need to update>";
 const nftContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 async function mintNFT(tokenURI) {
@@ -35,4 +35,4 @@ console.log(`Transaction receipt: ${JSON.stringify(transactionReceipt)}`);
 
 
 //the ipfs CID is to the metadata, which has the pined jpeg linked inside it with another CID
-mintNFT("https://gateway.pinata.cloud/ipfs/QmaoDgnyCpqMQh623uH6uWymrB9Jez6qvZyPiCp6kAixSb");
+mintNFT("https://gateway.pinata.cloud/ipfs/<CID>");
