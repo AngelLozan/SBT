@@ -116,7 +116,7 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
 	//only allow mint and burn transfers
 	require(from == address(0) || to == address(0), "This is an Soul Bound NFT, you cannot transfer it except to burn.");
 
-	//@dev super condition places this in all events. Hook. 
+	//@dev Inherited method once contract compiled. 
 	super._beforeTokenTransfer(from, to, tokenId);
 }
 
