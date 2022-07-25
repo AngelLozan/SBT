@@ -40,7 +40,7 @@ event boundSoul(address from, address to, bytes32 claimID);
 
 event claimBoundSoul(bytes32 claimID, uint256 tokenId);
 
-constructor() public payable ERC721("ExodusSBT", "ESBT"){ }
+constructor() public payable ERC721("ExampleSBT", "ESBT"){ }
 
 owner = msg.sender;
 

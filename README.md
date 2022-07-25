@@ -3,7 +3,7 @@
 Where to start: See `contracts` directory for the actual token. The rest is what makes the token work. 
 
 
-This is a project to mint a Soul Bound NFT as an example for the purposes of exploring whether it is profitable to mint SBTs on Polygon and bridge them to Ethereum for users of the Exodus wallet.
+This is a project to mint a Soul Bound NFT as an example for the purposes of exploring whether it is profitable to mint SBTs on Polygon and bridge them to Ethereum for users of the __________ wallet.
 
 Example metadata and functionality is limited. claim and burn. 
 
