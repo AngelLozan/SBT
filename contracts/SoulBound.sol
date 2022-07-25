@@ -7,14 +7,12 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-//@dev Ownable allows in theory the payment of royalties on Opensea. One reason to deploy to polygon, cheaper fees!
-import "@openzeppelin/contracts/access/Ownable.sol";
 //@dev Reentrancy guard for security. Prevents contract from calling itself. 
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 //@dev Burnable token, so you can get rid of it even if you can't transfer it out. 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
-contract SoulBound is ERC721Burnable, Ownable, ReentrancyGuard {
+contract SoulBound is ERC721Burnable, ReentrancyGuard {
 
 address owner;
 
