@@ -48,7 +48,8 @@ modifier onlyOwner() {
 
 
 //@dev Corresponds with the boundSoul event.
-//@dev This creates a soul bound claimID which is then used to make the non-transferrable NFT. Stored in struct to be accessed later. Uses msg.sender to ensure no-one else can claim that NFT. 
+//@dev This creates a soul bound claimID which is then used to make the non-transferrable NFT. Stored in struct to be accessed later. Uses msg.sender to ensure no-one else can claim that NFT.
+//@dev onlyOwner modifer so that only the owner of the contract can call this fuction. Organization control.  
 
 function bindASoul(address _to, string memory _uri) onlyOwner external payable returns (bytes32 claimID) {
 	require (_to != address(0), "Can't create nft for the burn address");
