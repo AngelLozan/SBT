@@ -59,6 +59,7 @@ function bindASoul(address _to, string memory _uri) onlyOwner external payable r
 
 	claims[claimID] = claimNFT({uri: _uri, to: _to, claimed: false});
 
+//@dev So the contract owner must bind the token to a specific address. Allows a user to then claim the NFT and mint it to their wallet. 
 	emit boundSoul(msg.sender, _to, claimID);
 
 	return claimID;
@@ -121,6 +122,8 @@ function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal
 }
 
 // --- Disabling Transfer Of Soulbound NFT Other Methods--- //
+
+//@dev You can also make a mint, burn and constructor that then has the below functions as well as the _beforeTokenTransfer method in order to make a more simplistic SBT
 
   // @notice Function disabled as cannot transfer a soulbound nft
   function safeTransferFrom(
