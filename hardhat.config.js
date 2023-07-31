@@ -5,7 +5,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require('dotenv').config();
 require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-etherscan");
-const { API_URL, PRIVATE_KEY } = process.env;
+const { API_URL, PRIVATE_KEY, ETHERSCAN } = process.env;
 
 module.exports = {
   defaultNetwork: "hardhat",
@@ -29,7 +29,7 @@ module.exports = {
   etherscan: {
     // Your API key for polygonscan
     // Obtain one at https://etherscan.io/
-    apiKey: "IEWXGI1H89D4V49UAQVIE1GT7ZC75QU8KX"
+    apiKey: `${ETHERSCAN}`
   },
   solidity: {
     version: "0.8.9",

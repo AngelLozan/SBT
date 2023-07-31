@@ -113,7 +113,7 @@ function burn(uint256 tokenId) public virtual override {
      * From and to are never both zero.
    **/
 
-function _beforeTokenTransfer(address from, address to, uint256 tokenId)internal virtual override {
+function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal virtual override {
 	//only allow mint and burn transfers
 	require(from == address(0) || to == address(0), "This is an Soul Bound NFT, you cannot transfer it except to burn.");
 
